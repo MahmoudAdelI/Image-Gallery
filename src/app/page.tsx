@@ -1,8 +1,10 @@
+import { Suspense } from "react"
 import Gallery from "./components/Gallery"
+import Loading from "./Loading"
 export default function Home() {
   return(
     <>
-      <Gallery />
+      <Suspense fallback={<Loading />}><Gallery /></Suspense>
     </>
   )
   

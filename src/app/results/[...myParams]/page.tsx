@@ -1,4 +1,6 @@
 import Gallery from "@/app/components/Gallery"
+import Loading from "@/app/Loading";
+import { Suspense } from "react";
 
 type Props = {
     params: Promise<{
@@ -18,5 +20,5 @@ export default async function searchResults( {params}: Props ) {
     const { myParams } = await params;
     const topic = myParams?.[0] ?? 'curated';
     const page = myParams?.[1] ?? '1';
-    return <Gallery topic={ topic } page={ page }/>
+    return<Suspense fallback={<Loading />}><Gallery topic={ topic } page={ page }/></Suspense>
 }

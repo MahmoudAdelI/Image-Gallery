@@ -17,7 +17,7 @@ export default function Footer({topic, page, prevPage, nextPage, totalPages}: Pr
             pageNums.push(i)
         }
     };
-    console.log(pageNums);
+    //console.log(pageNums);
     const nextPageArea = nextPage
     ? (
         <Link href={`/results/${topic}/${nextPage}`}

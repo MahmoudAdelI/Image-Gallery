@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        'ease-to-bottom': {
+          '0%': {transform: 'translateY(-385px)'},
+          '100%': {transform: 'translate(0)'}
+        }
+      
+      },
+      animation: {
+        'ease-to-bottom' : 'ease-to-bottom .2s ease-in-out'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

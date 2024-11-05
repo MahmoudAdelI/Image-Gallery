@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default async function Gallery({topic = 'curated', page}: Props) {
-console.log(topic);
+// console.log(topic);
   let url
 
   // Browsing beyond home
@@ -44,7 +44,6 @@ console.log(topic);
   const footerProps = {topic, page, prevPage, nextPage, totalPages}
   return (
     <>
-    {/* auto-rows-[6px] sm:auto-rows-[10px] */}
       <section className="px-1 sm:my-3 grid gap-y-[3px] md:gap-y-2 justify-items-center grid-cols-2 md:grid-cols-gallery">
               {imagesWithBlur.map(photo => (
                   <ImageContainer key={photo.id} photo={photo}/>
