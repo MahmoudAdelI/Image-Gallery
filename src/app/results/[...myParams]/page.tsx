@@ -7,7 +7,7 @@ type Props = {
 }
 //TEST ASYNC PARAMS
 export async function generateMetadata( {params}:Props ) {
-    const { myParams } = await params;
+    const { myParams } = params;
     const topic = myParams?.[0] ?? 'curated';
     const page = myParams?.[1] ?? '1';
     return {
@@ -15,7 +15,7 @@ export async function generateMetadata( {params}:Props ) {
     }
 }
 export default async function searchResults( {params}: Props ) {
-    const { myParams } = await params;
+    const { myParams } = params;
     const topic = myParams?.[0] ?? 'curated';
     const page = myParams?.[1] ?? '1';
     return <Gallery topic={ topic } page={ page }/>
