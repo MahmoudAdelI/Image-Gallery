@@ -8,26 +8,28 @@ type props = {
 
 export default function ImageContainer({photo}: props) {
   const widthHeightRatio = photo.height / photo.width;
-  const galleryHeight = Math.ceil(300 * widthHeightRatio);
-  const photoSpans = Math.ceil(galleryHeight / 10) + 2;
+  const galleryHeight = Math.ceil(380 * widthHeightRatio);
+  const photoSpans = Math.ceil(galleryHeight / 9);
   return (
-    <div className="w-[300px] sm:hover:scale-[1.03] sm:transition"
+    <div className="w-[95%] sm:hover:scale-[1.02] sm:transition"
     style={{gridRow: `span ${photoSpans}`}}
     >
-      <Link href={photo.url} target='_blank' className='grid place-content-center'>
-        <div className='rounded-l overflow-hidden'>
+      <Link href={photo.src.large2x} download target='_blank' className='grid place-content-center'>
+        <div className='relative rounded overflow-hidden '>
             <Image
                 alt={photo.alt} 
-                src={photo.src.large} 
+                src={photo.src.large2x} 
                 height={photo.height}
                 width={photo.width}
-                sizes="300"
+                sizes="380"
                 placeholder='blur'
                 blurDataURL={photo.blurredDataUrl}
-                className='hover:opacity-75'
                 />
+                <div className='image-hover'></div>
+
         </div>
       </Link>
+
     </div>
     
   )

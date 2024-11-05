@@ -14,10 +14,10 @@ const photoSchema = z.object({
     height: z.number(),
     url: z.string(),
     src: z.object({
-        large: z.string()
+        large2x: z.string()
     }),
     alt: z.string(),
-    blurredDataUrl: z.string().optional()
+    blurredDataUrl: z.string().optional(),
 })
 
 export const ImagesSchemaWithPhotos = BasicImageSchema.extend({

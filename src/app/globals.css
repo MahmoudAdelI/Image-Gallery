@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.btn {
+  @apply text-center rounded-lg border border-gray-400 hover:border-gray-600 text-gray-600 hover:text-gray-800;
+}
+
+.next-back {
+  @apply capitalize sm:text-lg underline text-gray-600 hover:text-gray-800;
+}
+
+.pettern {
+  @apply bg-hero-pattern bg-black;
+}
+.image-hover {
+  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 hover:after:bg-dark-gradient;
+}

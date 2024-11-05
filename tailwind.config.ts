@@ -13,7 +13,11 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       gridTemplateColumns: {
-        'gallery': 'repeat(auto-fit, minmax(300px, 1fr))',
+        'gallery': 'repeat(auto-fit, minmax(380px, 1fr))',
+      },
+      backgroundImage: {
+        'dark-gradient': "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)",
+        'hero-pattern': "linear-gradient(200deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%), url('/topography.svg')"
       }
     },
   },
