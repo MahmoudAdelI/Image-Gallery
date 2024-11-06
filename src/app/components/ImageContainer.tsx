@@ -1,7 +1,7 @@
 'use client'
 import  Image  from 'next/image'
 import type { Photo } from '@/models/Images'
-import Link from 'next/link';
+//import Link from 'next/link';
 import { useState } from 'react';
 
 
