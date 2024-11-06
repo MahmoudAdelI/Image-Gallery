@@ -12,11 +12,17 @@ const config: Config = {
         'ease-to-bottom': {
           '0%': {transform: 'translateY(-385px)'},
           '100%': {transform: 'translate(0)'}
+        },
+        'ease-to-left': {
+          '0%': {transform: 'translateX(30px)', opacity: '0'},
+          '75%': {transform: 'translateX(-5px)', opacity: '.75'},
+          '100%': {transform: 'translateX(0)', opacity: '1'}
         }
       
       },
       animation: {
-        'ease-to-bottom' : 'ease-to-bottom .2s ease-in-out'
+        'ease-to-bottom' : 'ease-to-bottom .2s ease-out',
+        'ease-to-left' : 'ease-to-left .2s ease-out',
       },
       colors: {
         background: "var(--background)",

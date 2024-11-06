@@ -13,7 +13,7 @@
   @apply bg-hero-pattern bg-black;
 }
 .image-hover {
-  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 hover:after:bg-dark-gradient;
+  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 after:bg-dark-gradient;
 }
 .loader {
   width: 16px;
