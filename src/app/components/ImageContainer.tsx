@@ -49,7 +49,7 @@ export default function ImageContainer({photo}: props) {
     style={{gridRow: `span ${photoSpans}`}}
     >
           
-        <div className='relative rounded overflow-hidden text-white'
+        <div className={`relative flex flex-col justify-center rounded overflow-hidden text-white ${menue? 'image-hover':''}`}
         onClick={toggleMenue}>
             <Image
                 alt={photo.alt} 
@@ -60,9 +60,8 @@ export default function ImageContainer({photo}: props) {
                 placeholder='blur'
                 blurDataURL={photo.blurredDataUrl}
                 />
-                <div className={`${menue? 'image-hover':''}`}></div>
 
-                <div id='menue-icon' className={`absolute top-2 md:top-10 right-0 px-2 md:px-4 md:scale-[1.7] transition-transform duration-300 ${menue?'rotate-[270deg]':''}`} onClick={toggleMenue}>
+                <div id='menue-icon' className={`absolute top-2 md:top-10 right-0 px-2 md:px-6 md:scale-[1.7] cursor-pointer z-20 transition-transform duration-300 ${menue?'rotate-[270deg]':''}`} onClick={toggleMenue}>
                 <MenueIcon />
                 </div>
 

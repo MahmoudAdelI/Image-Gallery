@@ -5,10 +5,10 @@
   @apply text-center rounded-lg border border-gray-400 hover:border-gray-600 text-gray-600 hover:text-gray-800;
 }
 .icon {
-  @apply transition-transform shadow-xl border-b pb-1 border-white border-opacity-20 hover:scale-110 active:scale-95;
+  @apply transition-transform cursor-pointer shadow-xl border-b pb-1 border-white border-opacity-20 hover:scale-110 active:scale-95 md:scale-[1.7] md:hover:scale-[2] md:active:scale-[1.4];
 }
 .icons-container {
-  @apply absolute top-1/2 -translate-y-1/2 right-0 px-2 md:px-4 py-[100%] flex flex-col gap-2 md:scale-[1.7] border-l border-white border-opacity-20 bg-white bg-opacity-10 animate-ease-to-left shadow-inner;
+  @apply absolute right-0 px-2 md:px-6 mt-1 h-full flex flex-col gap-2 md:gap-6 justify-center border-l border-white border-opacity-20 bg-white bg-opacity-10 animate-ease-to-left shadow-inner z-20;
 }
 
 .next-back {
@@ -19,7 +19,7 @@
   @apply bg-hero-pattern bg-black;
 }
 .image-hover {
-  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 after:bg-dark-gradient;
+  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 after:bg-dark-gradient z-10;
 }
 .loader {
   width: 16px;
