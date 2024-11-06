@@ -10,7 +10,7 @@ export default function Navbar() {
   }
   return (
     <>
-      <header className="bg-black border-b-[1px] border-white border-opacity-30 sticky top-0 z-10">
+      <header className="bg-black border-b-[1px] border-white border-opacity-30 sticky top-0 z-50">
         <nav className="flex flex-row sm: justify-between items-center max-w-7xl mx-auto text-white p-4 font-bold ">
           <h1 className="text-2xl sm:text-3xl text-center whitespace-nowrap">
               <Link href='/'>Image Gallery</Link>
