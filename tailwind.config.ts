@@ -13,16 +13,26 @@ const config: Config = {
           '0%': {transform: 'translateY(-385px)'},
           '100%': {transform: 'translate(0)'}
         },
+        'move-up': {
+          '0%': {transform: 'translateY(100%)'},
+          '100%': {transform: 'translate(0)'}
+        },
+        'move-down': {
+          '0%': {transform: 'translateY(-50%)', opacity: '0'},
+          '100%': {transform: 'translate(0)', opacity: '1'}
+        },
+
         'ease-to-left': {
-          '0%': {transform: 'translateX(10px)', opacity: '0'},
-          '75%': {transform: 'translateX(-5px)', opacity: '.75'},
-          '100%': {transform: 'translateX(0)', opacity: '1'}
+          '0%': {transform: 'translateX(60px)'},
+          '100%': {transform: 'translateX(0)'}
         }
       
       },
       animation: {
         'ease-to-bottom' : 'ease-to-bottom .2s ease-out',
-        'ease-to-left' : 'ease-to-left .2s ease-in-out',
+        'ease-to-left' : 'ease-to-left .4s ease-out',
+        'move-up' : 'move-up .4s ease-out',
+        'move-down': 'move-down .3s ease-out'
       },
       colors: {
         background: "var(--background)",

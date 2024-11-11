@@ -21,7 +21,7 @@ export default function Footer({topic, page, prevPage, nextPage, totalPages}: Pr
     const nextPageArea = nextPage
     ? (
         <Link href={`/results/${topic}/${nextPage}`}
-        className={!prevPage? 'mx-auto p-3 btn bg-gray-200':''}
+        className={!prevPage? 'mx-auto p-2 border rounded-md hover:rounded-lg hover:bg-black hover:text-white active:bg-black/80 transition-all duration-300 ease-out':''}
         >
             {!prevPage? 'show more': <span className="next-back ml-2">next</span>}
 

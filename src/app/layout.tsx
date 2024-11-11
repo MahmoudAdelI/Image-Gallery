@@ -11,15 +11,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body>
         <Navbar />
-        <main className="max-w-7xl mx-auto mt-12">
+        
+        <main className="max-w-7xl mx-auto">
           {children}
+          {modal}
         </main>
 
       </body>

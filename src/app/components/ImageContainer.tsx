@@ -1,11 +1,8 @@
 'use client'
 import  Image  from 'next/image'
 import type { Photo } from '@/models/Images'
-import { useState } from 'react';
-import FacebookIcon from '../assets/FacebookIcon';
-import TwitterIcon from '../assets/TwitterIcon';
-import MenueIcon from '../assets/MenueIcon';
-import WhatsappIcon from '../assets/WhatsappIcon';
+
+import { useRouter } from 'next/navigation';
 
 
 type props = {
@@ -16,52 +13,35 @@ export default function ImageContainer({photo}: props) {
   const widthHeightRatio = photo.height / photo.width;
   const galleryHeight = Math.ceil(380 * widthHeightRatio);
   const photoSpans = Math.ceil(galleryHeight / 9);
+  
+  // const [menue, setMenue] = useState(false);
 
-  const share = (imageUrl: string, platform: string) => {
-
-    let platformUrl: string = '';
-    const message = 'Check out this amazing image!';
-    switch (platform) {
-      case 'FACEBOOK' :
-        platformUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(imageUrl)}`;
-        break;
-      
-      case 'TWITTER':
-        platformUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(imageUrl)}`;
-        break;
-
-      case 'WHATSAPP':
-        platformUrl = `https://wa.me/?text=${encodeURIComponent(message)}%20${encodeURIComponent(imageUrl)}`;
-        break;
-      
-    }
-     
-        window.open(platformUrl, '_blank');
+  // const toggleMenue = () => {
+  //   setMenue(!menue)
+  // };
+  const router = useRouter();
+  const openPhoto = () => {
+    router.push(`/photo/${photo.id.toString()}`)
   }
-  const [menue, setMenue] = useState(false);
-
-  const toggleMenue = () => {
-    setMenue(!menue)
-  };
 
   return (
-    <div className="w-[95%] sm:hover:scale-[1.02] transition-opacity"
+    <div className="w-[95%] h-[95%] sm:hover:scale-[1.02] transition-all duration-300 ease-linear"
     style={{gridRow: `span ${photoSpans}`}}
     >
           
-        <div className={`relative flex flex-col justify-center rounded overflow-hidden text-white ${menue? 'image-hover':''}`}
-        onClick={toggleMenue}>
+        <div className={`relative flex flex-col justify-center rounded overflow-hidden text-white`}
+        onClick={openPhoto}>
             <Image
                 alt={photo.alt} 
-                src={photo.src.medium} 
+                src={photo.src.large} 
                 height={photo.height}
                 width={photo.width}
-                sizes="380"
+                sizes="(min-width: 1420px) 403px, (min-width: 1160px) calc(15.83vw + 181px), 47.5vw"
                 placeholder='blur'
                 blurDataURL={photo.blurredDataUrl}
                 />
 
-                <div id='menue-icon' className={`absolute top-2 md:top-10 right-0 px-2 md:px-6 md:scale-[1.7] cursor-pointer z-20 transition-transform duration-300 ${menue?'rotate-[270deg]':''}`} onClick={toggleMenue}>
+                {/* <div id='menue-icon' className={`absolute top-2 md:top-10 right-0 px-2 md:px-6 md:scale-[1.7] cursor-pointer z-20 transition-transform duration-300 ${menue?'rotate-[270deg]':''}`} onClick={toggleMenue}>
                 <MenueIcon />
                 </div>
 
@@ -88,7 +68,7 @@ export default function ImageContainer({photo}: props) {
                   </span>
 
                 </div>
-                )}
+                )} */}
                 
         </div>
 

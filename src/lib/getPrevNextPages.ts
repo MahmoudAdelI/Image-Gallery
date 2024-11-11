@@ -15,9 +15,8 @@ export default function getPrevNextPages(images: ImagesResults) {
         ? getPageNumber(images.prev_page)
         : null;
 
-    const totalPages = images.total_results % images.per_page
-    ? Math.ceil(images.total_results / images.per_page)
-    : (images.total_results / images.per_page) + 1;
+    const totalPages = Math.ceil(images.total_results / images.per_page)
+
 
     //if there's another page to load we load it
     if(prevPage && parseInt(prevPage) + 2 < totalPages) {

@@ -3,7 +3,7 @@ import type { Photo, ImagesResults } from "@/models/Images";
 
 async function getBase64(imageUrl:string) {
         try {
-            const res = await fetch(imageUrl);
+            const res = await fetch(imageUrl, {cache: 'force-cache'});
 
             if(!res.ok) {
                 throw new Error(`Failed to fetch image: ${res.status} ${res.statusText}`)
@@ -19,7 +19,7 @@ async function getBase64(imageUrl:string) {
 
 export default async function addBlurredDataUrls(Images:ImagesResults): Promise<Photo[]> {
     // make all requests at once instead of awaiting each one avoiding a waterfall
-    const base64Promises = Images.photos.map(photo => getBase64(photo.src.medium));
+    const base64Promises = Images.photos.map(photo => getBase64(photo.src.large));
 
     // resolve all requests in order
     const base64Results = await Promise.all(base64Promises);

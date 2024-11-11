@@ -14,9 +14,12 @@ const photoSchema = z.object({
     height: z.number(),
     url: z.string(),
     src: z.object({
-        medium: z.string(),
-        large2x: z.string()
+        original: z.string(),
+        large2x: z.string(),
+        large: z.string(),
     }),
+    avg_color: z.string(),
+    photographer: z.string(),
     alt: z.string(),
     blurredDataUrl: z.string().optional(),
 })
