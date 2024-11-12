@@ -14,8 +14,8 @@ const config: Config = {
           '100%': {transform: 'translate(0)'}
         },
         'move-up': {
-          '0%': {transform: 'translateY(100%)'},
-          '100%': {transform: 'translate(0)'}
+          '0%': {transform: 'translateY(60%)', opacity: '.5'},
+          '100%': {transform: 'translate(0)', opacity: '1'}
         },
         'move-down': {
           '0%': {transform: 'translateY(-50%)', opacity: '0'},
@@ -31,7 +31,7 @@ const config: Config = {
       animation: {
         'ease-to-bottom' : 'ease-to-bottom .2s ease-out',
         'ease-to-left' : 'ease-to-left .4s ease-out',
-        'move-up' : 'move-up .4s ease-out',
+        'move-up' : 'move-up .3s ease',
         'move-down': 'move-down .3s ease-out'
       },
       colors: {

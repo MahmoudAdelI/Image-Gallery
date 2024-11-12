@@ -18,9 +18,9 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
   return (
 
     <Modal>
-      <div className="relative py-10 bg-white rounded-t-lg">
+      <div className="relative py-10 bg-white h-full rounded-t-lg">
       <ModalCloser />
-        <header className="absolute top-9 md:top-0 flex justify-between p-2 md:p-4 w-full">
+        <header className="absolute top-12 md:top-0 flex justify-between p-2 md:p-4 w-full">
 
           <section id="photographer" className="flex justify-between items-center">
             <div id="avatar" className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-300 rounded-full text-white mr-2">
@@ -43,7 +43,7 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
         alt={image.alt}
         width={image.width}
         height={image.height}
-        className={`h-[80vh] md:h-[85vh] mt-14 md:mt-10 object-contain`}
+        className={`h-full px-2 md:h-[85vh] md:mt-10 object-contain`}
         />
       </div>
           
