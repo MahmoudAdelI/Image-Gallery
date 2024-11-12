@@ -2,7 +2,7 @@ import type { ImagesResults } from "@/models/Images";
 import { ImagesSchemaWithPhotos } from "@/models/Images";
 import env from "./env";
 
-export default async function fetchImages(url: string, retries = 3):
+export default async function fetchImages(url: string):
 Promise<ImagesResults | undefined> {
     try {
         const res = await fetch(url, {
@@ -11,14 +11,14 @@ Promise<ImagesResults | undefined> {
                 Authorization: env.PEXELS_API_KEY
             }
         });
-        
-        if(!res.ok) {
-            if(res.status === 429 && retries > 0){
-                await new Promise(resolve => setTimeout(resolve, 1000 * (4 - retries)));
-                return fetchImages(url, retries - 1)
-            }
-            throw new Error(`Fetch Images error`)
-        };
+        console.log(res);
+        // if(!res.ok) {
+        //     if(res.status === 429 && retries > 0){
+        //         await new Promise(resolve => setTimeout(resolve, 1000 * (4 - retries)));
+        //         return fetchImages(url, retries - 1)
+        //     }
+        //     throw new Error(`Fetch Images error`)
+        // };
 
         const ImagesResults:ImagesResults = await res.json();
 
