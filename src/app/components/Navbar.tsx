@@ -5,7 +5,7 @@ import { useState } from "react";
 import Close from "../assets/Close";
 
 export default function Navbar() {
-  const [toggleSearch, setToggleSearch] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState<boolean>(false);
   const handleClick = () => {
     setToggleSearch(!toggleSearch);
     window.scrollTo({

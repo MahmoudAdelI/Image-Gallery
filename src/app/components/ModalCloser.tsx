@@ -8,7 +8,9 @@ export default function ModalCloser() {
         router.back();
     }
   return (
-    <div onClick={closeModal} className="absolute top-1 left-1/2 -translate-x-1/2  text-gray-400 active:text-gray-600 lg:-top-4 lg:-left-8 lg:text-white shadow-lg active:shadow-md active:translate-y-[2px] rounded-full p-1 cursor-pointer transition-all duration-100 ease-linear"><Close /></div>
+    <div onClick={closeModal} className="absolute top-1 left-1/2 -translate-x-1/2  text-gray-400 active:text-gray-600 
+    lg:-top-4 lg:-left-8 lg:text-white shadow-lg active:shadow-md active:translate-y-[2px] rounded-full p-1 cursor-pointer 
+    transition-all duration-100 ease-linear"><Close /></div>
 
   )
 }

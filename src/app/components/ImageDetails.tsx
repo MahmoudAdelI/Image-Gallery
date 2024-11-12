@@ -15,8 +15,6 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
       <Image
         src={photo.src.large2x}
         alt={photo.alt}
-        // fill={true}
-        // className='object-cover '
         width={photo.width}
         height={photo.height}
         className={`max-h-[900px] object-contain`}

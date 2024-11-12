@@ -4,42 +4,26 @@ import Loading from "@/app/Loading";
 import { Suspense } from "react";
 
 
-// const fetchPagesForCategory = async (category:string) => {
-//     try {
-//         const url = `https://api.pexels.com/v1/search?query=${category}`
-//         const data = await fetchImages(url);
-//         if(!data || !data.total_results || !data.per_page) return 0;
-//         const totalPages = Math.ceil(data?.total_results / data?.per_page);
-//         console.log(totalPages);
-//         return totalPages;
-//     } catch (e){
-//         console.error(`Error fetching pages for category: ${category}`, e);
-//         console.log('PEXELS_API_KEY:', env.PEXELS_API_KEY);
-//         return 0;
-//     }
+type StaticParam = {
+    myParams: [string, string];
+  };
+const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
 
-// }
-
-// type StaticParam = {
-//     myParams: [string, string];
-//   };
-// const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
-
-// export async function generateStaticParams() {
-// const staticParams:StaticParam[] = [];
+export async function generateStaticParams() {
+const staticParams:StaticParam[] = [];
 
 
-// const pages:number[] = Array.from({length: 3}, (_, i) => i + 1);
-// categories.forEach(category => {
+const pages:number[] = Array.from({length: 3}, (_, i) => i + 1);
+categories.forEach(category => {
 
-//     pages.forEach(page => staticParams.push({myParams: [category, page.toString()]}))
-// });
-// return staticParams;
-// }
+    pages.forEach(page => staticParams.push({myParams: [category, page.toString()]}))
+});
+return staticParams;
+}
 
 type Props = {
     params: Promise<{
-        myParams: string[] //TEST (string | undefined)[]
+        myParams: string[]
     }>
 }
 //TEST ASYNC PARAMS

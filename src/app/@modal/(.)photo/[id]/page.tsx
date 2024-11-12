@@ -9,7 +9,7 @@ import Image from "next/image";
 export default async function Intersepter({params}:{params: Promise<{id: string}>}) {
   const {id} = await params;
   const res = await fetch(`https://api.pexels.com/v1/photos/${id}`, {
-    // cache: 'no-store',
+    cache: 'force-cache',
     headers: {
         Authorization: env.PEXELS_API_KEY
     }
