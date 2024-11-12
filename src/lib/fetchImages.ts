@@ -6,7 +6,7 @@ export default async function fetchImages(url: string):
 Promise<ImagesResults | undefined> {
     try {
         const res = await fetch(url, {
-            cache: 'no-store',
+            // cache: 'no-store',
             headers: {
                 Authorization: env.PEXELS_API_KEY
             }
