@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 const staticParams:StaticParam[] = [];
 
 
-const pages:number[] = Array.from({length: 5}, (_, i) => i + 1);
+const pages:number[] = Array.from({length: 3}, (_, i) => i + 1);
 categories.forEach(category => {
 
     pages.forEach(page => staticParams.push({myParams: [category, page.toString()]}))

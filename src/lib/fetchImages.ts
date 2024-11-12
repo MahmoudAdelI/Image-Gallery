@@ -5,19 +5,13 @@ import env from "./env";
 export default async function fetchImages(url: string, retries = 3):
 Promise<ImagesResults | undefined> {
     try {
-        //const startTime = Date.now(); //test
         const res = await fetch(url, {
-            cache: 'force-cache',
+            cache: 'no-store',
             headers: {
                 Authorization: env.PEXELS_API_KEY
             }
         });
         
-        //const endTime = Date.now();
-        // console.log(`Fetch took ${endTime - startTime}ms`);
-        // console.log(res.status);
-        //console.log(res);
-        //console.log(res.headers.get('X-RateLimit-Remaining'));
         if(!res.ok) {
             if(res.status === 429 && retries > 0){
                 await new Promise(resolve => setTimeout(resolve, 1000 * (4 - retries)));
