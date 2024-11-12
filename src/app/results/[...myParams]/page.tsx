@@ -23,19 +23,19 @@ import { Suspense } from "react";
 type StaticParam = {
     myParams: [string, string];
   };
-const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
+// const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
 
-export async function generateStaticParams() {
-const staticParams:StaticParam[] = [];
+// export async function generateStaticParams() {
+// const staticParams:StaticParam[] = [];
 
 
-const pages:number[] = Array.from({length: 3}, (_, i) => i + 1);
-categories.forEach(category => {
+// const pages:number[] = Array.from({length: 3}, (_, i) => i + 1);
+// categories.forEach(category => {
 
-    pages.forEach(page => staticParams.push({myParams: [category, page.toString()]}))
-});
-return staticParams;
-}
+//     pages.forEach(page => staticParams.push({myParams: [category, page.toString()]}))
+// });
+// return staticParams;
+// }
 
 type Props = {
     params: Promise<{
