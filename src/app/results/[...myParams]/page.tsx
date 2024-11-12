@@ -20,9 +20,9 @@ import { Suspense } from "react";
 
 // }
 
-type StaticParam = {
-    myParams: [string, string];
-  };
+// type StaticParam = {
+//     myParams: [string, string];
+//   };
 // const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
 
 // export async function generateStaticParams() {
