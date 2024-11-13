@@ -6,6 +6,7 @@ export default function ModalCloser() {
     const router = useRouter();
     const closeModal = () => {
         router.back();
+        document.body.style.overflow = "";
     }
   return (
     <div onClick={closeModal} className="absolute top-2 left-1/2 -translate-x-1/2  text-gray-400 active:text-gray-600 

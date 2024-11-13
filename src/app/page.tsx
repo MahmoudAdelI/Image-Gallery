@@ -6,7 +6,9 @@ export default function Home() {
   return(
     <>
     <Filters />
-      <Suspense fallback={<Loading />}><Gallery /></Suspense>
+    <Suspense fallback={<Loading />}>
+      <Gallery />
+    </Suspense>
     </>
   )
   

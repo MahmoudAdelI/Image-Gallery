@@ -10,21 +10,16 @@ type props = {
 }
 
 export default function ImageContainer({photo}: props) {
-  const widthHeightRatio = photo.height / photo.width;
-  const galleryHeight = Math.ceil(380 * widthHeightRatio);
-  const photoSpans = Math.ceil(galleryHeight / 9);
-  
   const router = useRouter();
   const openPhoto = () => {
     router.push(`/photo/${photo.id.toString()}`)
+    document.body.style.overflow = "hidden";
   }
 
   return (
-    <div className="w-[95%] h-[95%] sm:hover:scale-[1.02] transition-all duration-300 ease-linear"
-    style={{gridRow: `span ${photoSpans}`}}
-    >
-          
-        <div className={`relative flex flex-col justify-center rounded overflow-hidden text-white`}
+    <div className="mb-2 sm:hover:scale-[1.01] transition-all duration-200 ease-linear">
+
+        <div className={`flex flex-col justify-center rounded`}
         onClick={openPhoto}>
             <Image
                 alt={photo.alt} 
@@ -35,7 +30,6 @@ export default function ImageContainer({photo}: props) {
                 placeholder='blur'
                 blurDataURL={photo.blurredDataUrl}
                 />
-    
         </div>
 
     </div>

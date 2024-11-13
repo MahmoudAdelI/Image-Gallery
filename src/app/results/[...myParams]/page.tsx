@@ -42,8 +42,10 @@ export default async function searchResults( {params}: Props ) {
     const page = myParams?.[1] ?? '1';
     return(
         <>
-            <Suspense><Filters /></Suspense>
-            <Suspense fallback={<Loading />}><Gallery topic={ topic } page={ page }/></Suspense>
+            <Filters />
+            <Suspense fallback={<Loading />}>
+             <Gallery topic={ topic } page={ page }/>
+            </Suspense>
         </>
     )
 }

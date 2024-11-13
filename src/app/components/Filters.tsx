@@ -16,10 +16,10 @@ export default function Filters() {
       <div className="flex justify-center gap-3 sm:gap-10 md:gap-14 max-w-7xl mx-auto">
         {categories.map((category, i) => (
         
-          <div key={i} onClick={() => handleClick(category)}
-          className={`categories ${pathname === `/results/${category}`?'bg-black rounded-lg text-white shadow-lg': 'rounded-md text-gray-700'}`}>
+          <button key={i} onClick={() => handleClick(category)}
+          className={`categories ${pathname === `/results/${category}`?'dark-btn': 'text-gray-700'}`}>
             {category}
-          </div>
+          </button>
         
           ))}
       </div>

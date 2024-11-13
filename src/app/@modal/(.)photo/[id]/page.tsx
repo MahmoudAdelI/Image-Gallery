@@ -43,7 +43,7 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
         alt={image.alt}
         width={image.width}
         height={image.height}
-        className={`h-full px-2 md:h-[85vh] md:mt-10 object-contain`}
+        className={`h-full px-2 md:h-[85vh] sm:mt-14 object-contain`}
         />
       </div>
           

@@ -44,7 +44,7 @@ export default async function Gallery({topic = 'curated', page}: Props) {
   const footerProps = {topic, page, prevPage, nextPage, totalPages}
   return (
     <>
-      <section className="px-1 sm:my-3 grid gap-y-[3px] md:gap-y-2 justify-items-center grid-cols-2 md:grid-cols-gallery">
+      <section className="px-2 mx-auto columns-2 md:columns-3  gap-2">
               {imagesWithBlur.map(photo => (
                   <ImageContainer key={photo.id} photo={photo}/>
               ))}

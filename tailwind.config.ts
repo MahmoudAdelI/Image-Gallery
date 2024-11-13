@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       keyframes: {
         'ease-to-bottom': {
-          '0%': {transform: 'translateY(-385px)'},
+          '0%': {transform: 'translateY(-50%)'},
           '100%': {transform: 'translate(0)'}
         },
         'move-up': {
@@ -22,24 +22,16 @@ const config: Config = {
           '100%': {transform: 'translate(0)', opacity: '1'}
         },
 
-        'ease-to-left': {
-          '0%': {transform: 'translateX(60px)'},
-          '100%': {transform: 'translateX(0)'}
-        }
       
       },
       animation: {
-        'ease-to-bottom' : 'ease-to-bottom .2s ease-out',
-        'ease-to-left' : 'ease-to-left .4s ease-out',
+        'ease-to-bottom' : 'ease-to-bottom .3s ease',
         'move-up' : 'move-up .3s ease',
         'move-down': 'move-down .3s ease-out'
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
-      gridTemplateColumns: {
-        'gallery': 'repeat(auto-fit, minmax(380px, 1fr))',
       },
       backgroundImage: {
         'dark-gradient': "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)",

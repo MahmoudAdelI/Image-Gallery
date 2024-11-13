@@ -1,12 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.categories {
-  @apply my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base text-center uppercase py-[6px] md:py-2 cursor-pointer transition-all duration-500 ease-out md:hover:rounded-lg border hover:bg-black hover:text-white;
-}
 .btn {
-  @apply text-center rounded-lg border border-gray-400 hover:border-gray-600 text-gray-600 hover:text-gray-800;
+  @apply active:bg-black/80 border border-gray-500 rounded-md transition-all duration-300 ease-linear;
 }
+.dark-btn {
+  @apply bg-black rounded-lg text-white shadow-lg;
+}
+.hover-dark-btn {
+  @apply hover:bg-black hover:text-white hover:rounded-lg hover:shadow-md;
+}
+
+.categories {
+  @apply btn hover-dark-btn my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base uppercase py-[6px] md:py-2;
+}
+
+/* .categories {
+  @apply my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base text-center uppercase py-[6px] md:py-2 cursor-pointer transition-all duration-500 ease-out md:hover:rounded-lg border hover:bg-black hover:text-white;
+} */
 .icon {
   @apply transition-transform cursor-pointer fill-current p-1 bg-gray-100 rounded-full md:scale-[1.5] md:hover:scale-[1.7] active:scale-95;
 }

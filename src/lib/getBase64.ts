@@ -3,7 +3,7 @@ import type { Photo, ImagesResults } from "@/models/Images";
 
 async function getBase64(imageUrl:string) {
         try {
-            const res = await fetch(imageUrl);
+            const res = await fetch(imageUrl, {cache: 'force-cache'});
 
             if(!res.ok) {
                 throw new Error(`Failed to fetch image: ${res.status} ${res.statusText}`)
