@@ -21,9 +21,9 @@
 .icon {
   @apply transition-transform cursor-pointer fill-current p-1 bg-gray-100 rounded-full md:scale-[1.5] md:hover:scale-[1.7] active:scale-95;
 }
-.icons-container {
+/* .icons-container {
   @apply absolute top-0 bottom-0 right-0 px-2 md:px-6 pt-1 flex flex-col gap-2 md:gap-10 justify-center border-l border-white border-opacity-20 bg-white bg-opacity-10 animate-ease-to-left shadow-inner z-20;
-}
+} */
 
 .next-back {
   @apply capitalize sm:text-lg underline text-gray-600 hover:text-gray-800;
