@@ -11,6 +11,7 @@ export default async function PhotoDetails({params}:{params: Promise<{id: string
     }
 });
   const image:Photo = await res.json();
+  
   return (
     <div>
       <ImageDetail photo = {image} />

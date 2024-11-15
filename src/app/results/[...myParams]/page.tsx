@@ -7,7 +7,7 @@ import { Suspense } from "react";
 type StaticParam = {
     myParams: [string, string];
   };
-const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
+const categories:string[]  = ['nature', 'summer', 'design', 'fashion', 'city'];
 
 export async function generateStaticParams() {
 const staticParams:StaticParam[] = [];

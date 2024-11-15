@@ -44,7 +44,7 @@ export default function ImageCard({photo}: props) {
                   <DownloadIcon />
                   </section>
 
-                  <section className='absolute bottom-2 left-2 md:bottom-4 md:left-4 text-white opacity-70 hover:opacity-100 text-xs md:text-sm transition duration-100'>
+                  <section className='absolute bottom-2 left-2 md:bottom-4 md:left-4 text-white opacity-80 hover:opacity-100 text-[10px] md:text-sm transition duration-100'>
                     <Photographer image={photo}/> 
                   </section>
                 </div>

@@ -28,7 +28,7 @@ export default function ShareModal({image}: ImageDetailProps) {
                 
                 <div className="relative w-64 md:w-80 lg:w-96 h-[30vh] bg-white rounded-lg">
                     <div onClick={handleClick} className="absolute -top-4 -left-8 text-white cursor-pointer transition-transform hover:scale-110 active:scale-95"><Close /></div>
-                    <p className="text-center font-bold text-gray-800 text-2xl md:text-3xl lg:text-4xl m-2 text-wrap">Share with your commuinty</p>
+                    <p className="text-center font-bold text-gray-800 text-xl md:text-3xl m-6 text-wrap">Share with your commuinty</p>
                     <ShareIcons image={image} />
                 </div>
 

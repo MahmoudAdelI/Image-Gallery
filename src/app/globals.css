@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .btn {
-  @apply active:bg-black/80 border border-gray-500 rounded-md transition duration-300;
+  @apply active:bg-black/80 border border-gray-500 rounded-md transition duration-300 select-none;
 }
 .dark-btn {
   @apply bg-black rounded-lg text-white shadow-lg;
@@ -16,7 +16,7 @@
 }
 
 .icon {
-  @apply transition-transform cursor-pointer fill-current p-1 bg-gray-100 rounded-full md:scale-[1.5] md:hover:scale-[1.7] active:scale-95;
+  @apply transition duration-200 cursor-pointer fill-current p-2 bg-gray-100 rounded-full md:hover:scale-[1.2];
 }
 
 .next-back {
@@ -26,9 +26,7 @@
 .pettern {
   @apply bg-hero-pattern bg-black;
 }
-.image-hover {
-  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 lg:hover:after:bg-dark-gradient lg:hover:after:shadow-md;
-}
+
 .loader {
   width: 14px;
   height: 14px;

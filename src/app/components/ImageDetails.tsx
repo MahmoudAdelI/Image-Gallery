@@ -25,7 +25,6 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
       />
       </section>
 
-
       <section className="lg:w-1/2 p-4 h-full relative">
 
         <div className="flex gap-2 justify-end">

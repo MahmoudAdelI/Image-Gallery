@@ -2,7 +2,7 @@
 // import { useState } from "react";
 import { usePathname, useRouter } from 'next/navigation'
 
-const categories:string[]  = ['art', 'beauty', 'sports','fashion', 'models'];
+const categories:string[]  = ['nature', 'summer', 'design', 'fashion', 'city'];
 export default function Filters() {
 //const [clicked, setClicked] = useState<string | null>(null);
   const router = useRouter();
