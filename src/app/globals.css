@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .btn {
-  @apply active:bg-black/80 border border-gray-500 rounded-md transition-all duration-300 ease-linear;
+  @apply active:bg-black/80 border border-gray-500 rounded-md transition duration-300;
 }
 .dark-btn {
   @apply bg-black rounded-lg text-white shadow-lg;
@@ -15,15 +15,9 @@
   @apply btn hover-dark-btn my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base uppercase py-[6px] md:py-2;
 }
 
-/* .categories {
-  @apply my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base text-center uppercase py-[6px] md:py-2 cursor-pointer transition-all duration-500 ease-out md:hover:rounded-lg border hover:bg-black hover:text-white;
-} */
 .icon {
   @apply transition-transform cursor-pointer fill-current p-1 bg-gray-100 rounded-full md:scale-[1.5] md:hover:scale-[1.7] active:scale-95;
 }
-/* .icons-container {
-  @apply absolute top-0 bottom-0 right-0 px-2 md:px-6 pt-1 flex flex-col gap-2 md:gap-10 justify-center border-l border-white border-opacity-20 bg-white bg-opacity-10 animate-ease-to-left shadow-inner z-20;
-} */
 
 .next-back {
   @apply capitalize sm:text-lg underline text-gray-600 hover:text-gray-800;
@@ -33,7 +27,7 @@
   @apply bg-hero-pattern bg-black;
 }
 .image-hover {
-  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 after:bg-dark-gradient z-10;
+  @apply after:absolute after:w-full after:h-full after:top-0 after:left-0 lg:hover:after:bg-dark-gradient lg:hover:after:shadow-md;
 }
 .loader {
   width: 14px;

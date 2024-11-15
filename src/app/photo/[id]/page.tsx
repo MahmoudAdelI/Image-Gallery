@@ -14,7 +14,6 @@ export default async function PhotoDetails({params}:{params: Promise<{id: string
   return (
     <div>
       <ImageDetail photo = {image} />
-      
     </div>
   )
 }

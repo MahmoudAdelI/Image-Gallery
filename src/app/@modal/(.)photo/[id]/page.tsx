@@ -1,6 +1,7 @@
 import Download from "@/app/components/Download";
-import Modal from "@/app/components/Modal";
+import ImageModal from "@/app/components/ImageModal";
 import ModalCloser from "@/app/components/ModalCloser";
+import Photographer from "@/app/components/Photographer";
 import ShareModal from "@/app/components/ShareModal";
 import env from "@/lib/env";
 import type { Photo } from "@/models/Images";
@@ -17,21 +18,15 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
   const image:Photo = await res.json();
   return (
 
-    <Modal>
+    <ImageModal>
       <div className="relative py-10 bg-white h-full rounded-t-lg">
       <ModalCloser />
         <header className="absolute top-12 md:top-0 flex justify-between p-2 md:p-4 w-full">
+        <div className="font-normal my-auto text-sm md:text-lg text-gray-600 hover:text-gray-900">
+          <Photographer image={image}/>
+        </div>
 
-          <section id="photographer" className="flex justify-between items-center">
-            <div id="avatar" className="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 bg-gray-300 rounded-full text-white mr-2">
-              <span className="text-lg md:text-2xl">{image.photographer[0]}</span>
-            </div>
-            <div id="name" className="font-semibold inline-block capitalize text-sm md:text-lg">
-              {image.photographer}
-            </div>
-          </section>
-
-          <section id="buttons" className="flex md:flex-row gap-2 items-center md:gap-6 box-border">
+          <section id="buttons" className="flex gap-2 items-center md:gap-6">
             <ShareModal image={image} />
             <Download image={image} />
           </section>
@@ -47,7 +42,7 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
         />
       </div>
           
-    </Modal>
+    </ImageModal>
 
   )
 }

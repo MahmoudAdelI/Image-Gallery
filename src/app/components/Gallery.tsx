@@ -1,6 +1,6 @@
 import fetchImages from "@/lib/fetchImages"
 import type { ImagesResults } from "@/models/Images"
-import ImageContainer from "./ImageContainer";
+import ImageCard from "./ImageCard";
 import addBlurredDataUrls from "@/lib/getBase64";
 import getPrevNextPages from "@/lib/getPrevNextPages";
 import Footer from "./Footer";
@@ -44,9 +44,9 @@ export default async function Gallery({topic = 'curated', page}: Props) {
   const footerProps = {topic, page, prevPage, nextPage, totalPages}
   return (
     <>
-      <section className="px-2 mx-auto columns-2 md:columns-3  gap-2">
+      <section className="px-2 mx-auto max-w-7xl columns-2 md:columns-3 gap-2">
               {imagesWithBlur.map(photo => (
-                  <ImageContainer key={photo.id} photo={photo}/>
+                  <ImageCard key={photo.id} photo={photo}/>
               ))}
       </section>
 

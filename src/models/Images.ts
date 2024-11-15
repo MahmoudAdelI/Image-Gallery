@@ -20,6 +20,7 @@ const photoSchema = z.object({
     }),
     avg_color: z.string(),
     photographer: z.string(),
+    photographer_url: z.string(),
     alt: z.string(),
     blurredDataUrl: z.string().optional(),
 })

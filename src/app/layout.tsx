@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 // export const revalidate = 3600;
 
@@ -20,8 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        
-        <main className="max-w-7xl mx-auto">
+        <main className="relative mx-auto">
           {children}
           {modal}
         </main>

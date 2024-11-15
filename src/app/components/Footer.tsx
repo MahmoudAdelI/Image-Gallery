@@ -42,13 +42,13 @@ export default function Footer({topic, page, prevPage, nextPage, totalPages}: Pr
                 {pageNums.map((num, i) => (
                     page && num === parseInt(page)
                     ? <span key={i}
-                    className="p-2 btn"
+                    className="p-2 "
                     >
                         {num}
                     </span>
                     : (
                         <Link key={i} href={`/results/${topic}/${num}`}
-                        className=" p-2 btn bg-gray-200"
+                        className=" p-2 btn hover-dark-btn"
                         >
                             {num}
                         </Link>
