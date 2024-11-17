@@ -13,26 +13,15 @@ type Props = {
 export default async function Gallery({topic = 'curated', page}: Props) {
 // console.log(topic);
   let url
-
-  // Browsing beyond home
-  if( topic === 'curated' && page ) { 
-    url = `https://api.pexels.com/v1/curated?page=${page}`
-  };
-
-  // Home if we passed nothing or undefined
-  if( topic === 'curated' ) { 
-    url = 'https://api.pexels.com/v1/curated'
-  };
-
-  // If there's no page it means we're on 1st search result page 
-  if( !page ) { 
+  if (topic === 'curated' && page) {
+    url = `https://api.pexels.com/v1/curated?page=${page}`;
+  } else if (topic === 'curated') {
+    url = 'https://api.pexels.com/v1/curated';
+  } else if (!page) {
     url = `https://api.pexels.com/v1/search?query=${topic}`;
-  };
-
-  // else means we're searching and on a page rather than the 1st
-  url = `https://api.pexels.com/v1/search?query=${topic}&page=${page}`;
-
-
+  } else {
+    url = `https://api.pexels.com/v1/search?query=${topic}&page=${page}`;
+  }
                 
   const images: ImagesResults | undefined = await fetchImages(url);
   // console.log(images);

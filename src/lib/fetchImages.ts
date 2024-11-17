@@ -1,3 +1,4 @@
+"use server" // this is a server action
 import type { ImagesResults } from "@/models/Images";
 import { ImagesSchemaWithPhotos } from "@/models/Images";
 import env from "./env";
@@ -27,6 +28,7 @@ Promise<ImagesResults | undefined> {
         //console.log(parsedData);
         if(parsedData.total_results === 0) return undefined;
 
+        // console.log('parsed data: ', parsedData);
         return parsedData;
     } catch (err) {
         //will show in terminal

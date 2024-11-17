@@ -1,3 +1,4 @@
+"use server"
 import { getPlaiceholder } from "plaiceholder";
 import type { Photo, ImagesResults } from "@/models/Images";
 
@@ -24,9 +25,11 @@ export default async function addBlurredDataUrls(Images:ImagesResults): Promise<
     // resolve all requests in order
     const base64Results = await Promise.all(base64Promises);
 
-    const photosWithBlur: Photo[] = Images.photos.map((photo, i) => {
-        photo.blurredDataUrl = base64Results[i];
-        return photo
-    });
+    const photosWithBlur: Photo[] = Images.photos.map((photo, i) => ({
+        ...photo,
+        blurredDataUrl: base64Results[i]
+      
+    }));
+    // console.log('photosWithBlur', photosWithBlur);
     return photosWithBlur;
 }

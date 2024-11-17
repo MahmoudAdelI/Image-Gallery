@@ -24,9 +24,10 @@ export default function ImageCard({photo}: props) {
       document.body.style.overflow = "hidden";
     
   }
-
   return (
-    <div onClick={openPhoto} className="cursor-zoom-in relative mb-2 sm:hover:scale-[1.01] transition-all duration-200 ease-linear">
+    <div
+    style={{backgroundColor: photo.avg_color}}
+    onClick={openPhoto} className="cursor-zoom-in relative mb-2 sm:hover:scale-[1.01] transition-all duration-200 ease-linear">
             <Image
                 alt={photo.alt} 
                 src={photo.src.large} 
@@ -36,6 +37,7 @@ export default function ImageCard({photo}: props) {
                 placeholder='blur'
                 blurDataURL={photo.blurredDataUrl}
                 />
+         
                 <div className='absolute inset-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-dark-gradient transition duration-200'>
                   <section
                   className='absolute bottom-2 right-2 md:bottom-4 md:right-4 p-1 md:p-2 text-white cursor-pointer opacity-70  hover:opacity-100 bg-black/50 rounded-full transition duration-100'

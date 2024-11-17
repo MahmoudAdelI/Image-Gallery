@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
-import Gallery from "./Gallery";
+import ClientGallery from "./infinit scrolling test/ClientGallery";
 
 interface ImageDetailProps {
   photo: Photo;
@@ -28,7 +28,8 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
       <section className="lg:w-1/2 p-4 h-full relative">
 
         <div className="flex gap-2 justify-end">
-          <ShareModal image={photo}/>
+          <ShareModal/>
+          {/* <ShareModal image={photo}/> */}
           <Download image={photo}/>
         </div>
 
@@ -47,7 +48,7 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
     </div>
 
       <h2 className="text-2xl font-semibold text-center my-10">More to explore</h2>  
-    <Gallery topic={`${searchTopic[0]} ${searchTopic[1]} ${searchTopic[2]}`}/>
+    <ClientGallery topic={`${searchTopic.slice(0,6).join(' ')}`}/>
     </>
   );
 };

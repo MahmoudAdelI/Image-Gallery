@@ -28,48 +28,52 @@
 }
 
 .loader {
-  width: 14px;
-  height: 14px;
-  box-shadow: 0 30px, 0 -30px;
-  border-radius: 4px;
-  background: currentColor;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
   display: block;
+  margin: 15px auto;
   position: relative;
-  color: #fff;
+  color: #000000;
+  left: -120px;
   box-sizing: border-box;
-  animation: animloader 2s ease infinite;
-}
-.loader::after,
-.loader::before {
-  content: "";
-  box-sizing: border-box;
-  width: 14px;
-  height: 14px;
-  box-shadow: 0 30px, 0 -30px;
-  border-radius: 4px;
-  background: currentColor;
-  color: #fff;
-  position: absolute;
-  left: 30px;
-  top: 0;
-  animation: animloader 2s 0.2s ease infinite;
-}
-.loader::before {
-  animation-delay: 0.4s;
-  left: 60px;
+  animation: shadowRolling 2s linear infinite;
 }
 
-@keyframes animloader {
+@keyframes shadowRolling {
   0% {
-    top: 0;
-    color: black;
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 100px 0 black, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 110px 0 black, 100px 0 black, 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0);
+  }
+  36% {
+    box-shadow: 120px 0 black, 110px 0 black, 100px 0 black,
+      0px 0 rgba(255, 255, 255, 0);
   }
   50% {
-    top: 30px;
-    color: rgba(255, 255, 255, 0.2);
+    box-shadow: 130px 0 black, 120px 0 black, 110px 0 black, 100px 0 black;
+  }
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 black, 120px 0 black,
+      110px 0 black;
+  }
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 black, 120px 0 black;
+  }
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 black;
   }
   100% {
-    top: 0;
-    color: black;
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
   }
 }

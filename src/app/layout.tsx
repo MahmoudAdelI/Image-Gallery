@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar";
 // export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Image Gallery",
-  description: "Imag galley application ",
+  title: "Pixy",
+  description: "Image gallery application ",
 };
 
 export default function RootLayout({
