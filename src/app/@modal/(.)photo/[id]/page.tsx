@@ -27,7 +27,8 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
         </div>
 
           <section id="buttons" className="flex gap-2 items-center md:gap-6">
-            <ShareModal image={image} />
+            <ShareModal/>
+            {/* <ShareModal image={image} /> */}
             <Download image={image} />
           </section>
             
