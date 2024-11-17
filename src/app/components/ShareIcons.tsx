@@ -12,23 +12,24 @@ import { usePathname } from "next/navigation";
 
 export default function ShareIcons() {
     const currentPathname = usePathname();
+    const shareURL = `https://image-gallery-mauve-xi.vercel.app/${currentPathname}`
 
   return (
     <div id='icons' className={'flex justify-center items-center gap-10 mt-10'}>
 
-        <span onClick={() => share(currentPathname, 'FACEBOOK')}
+        <span onClick={() => share(shareURL, 'FACEBOOK')}
             className='icon text-blue-800 '
             >
             <FacebookIcon />
         </span>
 
-        <span onClick={() => share(currentPathname, 'TWITTER')}
+        <span onClick={() => share(shareURL, 'TWITTER')}
             className='icon'
             >
             <TwitterIcon />
         </span>
 
-        <span onClick={() => share(currentPathname, 'WHATSAPP')}
+        <span onClick={() => share(shareURL, 'WHATSAPP')}
             className='icon text-green-600'
             >
             <WhatsappIcon />
