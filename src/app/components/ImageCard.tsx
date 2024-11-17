@@ -34,8 +34,8 @@ export default function ImageCard({photo}: props) {
                 height={photo.height}
                 width={photo.width}
                 sizes="(min-width: 1420px) 403px, (min-width: 1160px) calc(15.83vw + 181px), 47.5vw"
-                placeholder='blur'
-                blurDataURL={photo.blurredDataUrl}
+                // placeholder='blur'
+                // blurDataURL={photo.blurredDataUrl}
                 />
          
                 <div className='absolute inset-0 w-full h-full opacity-0 hover:opacity-100 hover:bg-dark-gradient transition duration-200'>

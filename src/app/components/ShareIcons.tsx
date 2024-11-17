@@ -4,15 +4,14 @@ import { share } from "@/lib/shareImage";
 import FacebookIcon from "@/app/assets/FacebookIcon";
 import TwitterIcon from "@/app/assets/TwitterIcon";
 import WhatsappIcon from "@/app/assets/WhatsappIcon";
-import { usePathname } from "next/navigation";
 // export interface ImageDetailProps {
 //     image: Photo;
 // }
 // TestIcons({image}:ImageDetailProps)
 
 export default function ShareIcons() {
-    const currentPathname = usePathname();
-    const shareURL = `https://image-gallery-mauve-xi.vercel.app/${currentPathname}`
+    
+    const shareURL = window.location.href;
 
   return (
     <div id='icons' className={'flex justify-center items-center gap-10 mt-10'}>

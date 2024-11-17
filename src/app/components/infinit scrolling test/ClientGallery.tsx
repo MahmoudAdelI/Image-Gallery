@@ -3,7 +3,7 @@ import fetchImages from "@/lib/fetchImages"
 import { ImagesResults, Photo } from "@/models/Images"
 import { useState, useEffect, useRef } from "react"
 import ImageCard from "../ImageCard"
-import addBlurredDataUrls from "@/lib/getBase64"
+// import addBlurredDataUrls from "@/lib/getBase64"
 
 type Props = {
     topic?: string | undefined,
@@ -35,9 +35,9 @@ export default function ClientGallery({topic = 'curated'}:Props) {
             requestInProgress.current = true // if it's false and we get here, lock fetching by setting requestInProgress to true
             const data: ImagesResults | undefined = await fetchImages(url);
             if(!data || data.per_page === 0) return;
-            const imagesWithBlur = await addBlurredDataUrls(data);
-            console.log('imagesWithBlur: ', imagesWithBlur);
-            setImages(prev => [...prev, ...imagesWithBlur]);
+            // const imagesWithBlur = await addBlurredDataUrls(data);
+            // console.log('imagesWithBlur: ', imagesWithBlur);
+            setImages(prev => [...prev, ...data.photos]);
             setLoading(false);
             requestInProgress.current = false // unlock fetching and make it ready for more request
         }

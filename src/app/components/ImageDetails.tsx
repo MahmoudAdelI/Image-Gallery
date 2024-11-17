@@ -10,12 +10,13 @@ interface ImageDetailProps {
 }
 export default function ImageDetail({ photo } : ImageDetailProps) {
   const searchTopic = photo.alt.split(' ');
+  console.log('alt is: ', photo.alt);
   return (
     <>
     <div id="container"
     className="lg:max-w-6xl lg:h-[70vh] lg:mt-[10vh] flex flex-col items-center justify-center lg:flex-row lg:mx-auto rounded-xl shadow-lg "
     >
-      <section className="lg:w-1/2 h-full">
+      <section className="w-2/3 lg:w-1/2 h-full">
       <Image
         src={photo.src.large}
         alt={photo.alt}

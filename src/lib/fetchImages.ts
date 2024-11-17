@@ -1,7 +1,6 @@
-"use server" // this is a server action
 import type { ImagesResults } from "@/models/Images";
 import { ImagesSchemaWithPhotos } from "@/models/Images";
-import env from "./env";
+// import env from "./env";
 
 export default async function fetchImages(url: string, retries=5):
 Promise<ImagesResults | undefined> {
@@ -9,7 +8,8 @@ Promise<ImagesResults | undefined> {
         const res = await fetch(url, {
             cache: 'force-cache',
             headers: {
-                Authorization: env.PEXELS_API_KEY
+                Authorization: 'bLeDXBryb50pwlmEiuQBWpbkBHkJuBnfJ2I0w3EtR3ABEpfluWf6wmxy'
+                // Authorization: env.PEXELS_API_KEY
             }
         });
         // console.log(res);
@@ -28,7 +28,6 @@ Promise<ImagesResults | undefined> {
         //console.log(parsedData);
         if(parsedData.total_results === 0) return undefined;
 
-        // console.log('parsed data: ', parsedData);
         return parsedData;
     } catch (err) {
         //will show in terminal
