@@ -1,3 +1,4 @@
+import ScrollToTop from "@/app/components/client/ScrollToTop";
 import ImageDetail from "@/app/components/ImageDetails";
 import env from "@/lib/env";
 import type { Photo } from "@/models/Images";
@@ -50,6 +51,7 @@ export default async function PhotoDetails({params}:{params: Promise<{id: string
   
   return (
     <div>
+      <ScrollToTop />
       <ImageDetail photo= {image} />
     </div>
   )
