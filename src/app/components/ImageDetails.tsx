@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
-import ClientGallery from "./infinit scrolling test/ClientGallery";
+// import ClientGallery from "./infinit scrolling test/ClientGallery";
 import InitialGalleryLoad from "./infinit scrolling test/InitialGalleryLoad";
 
 interface ImageDetailProps {
