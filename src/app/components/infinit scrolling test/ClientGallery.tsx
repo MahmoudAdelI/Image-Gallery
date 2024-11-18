@@ -61,6 +61,7 @@ export default function ClientGallery({topic = 'curated', initialImages}:Props) 
 
   return (
     <div className="flex flex-col">
+      {/* <section className="px-2 mx-auto max-w-7xl flex flex-wrap gap-x-2 mb-10"> */}
       <section className="px-2 mx-auto max-w-7xl columns-2 md:columns-3 gap-2 mb-10">
                 {images.map(photo => (
                     <ImageCard key={photo.id} photo={photo}/>

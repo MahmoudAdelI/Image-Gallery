@@ -18,7 +18,7 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
     className="lg:max-w-6xl lg:h-[70vh] lg:mt-[10vh] flex flex-col items-center justify-center lg:flex-row lg:mx-auto rounded-xl shadow-lg "
     >
       <section className="w-2/3 lg:w-1/2 h-full">
-      <Image
+      <img
         src={photo.src.large}
         alt={photo.alt}
         width={photo.width}
