@@ -4,6 +4,7 @@ import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
 import ClientGallery from "./infinit scrolling test/ClientGallery";
+import InitialGalleryLoad from "./infinit scrolling test/InitialGalleryLoad";
 
 interface ImageDetailProps {
   photo: Photo;
@@ -49,7 +50,8 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
     </div>
 
       <h2 className="text-2xl font-semibold text-center my-10">More to explore</h2>  
-    <ClientGallery topic={`${searchTopic.slice(0,6).join(' ')}`}/>
+      <InitialGalleryLoad topic={`${searchTopic.slice(0,6).join(' ')}`} />
+    {/* <ClientGallery topic={`${searchTopic.slice(0,6).join(' ')}`}/> */}
     </>
   );
 };
