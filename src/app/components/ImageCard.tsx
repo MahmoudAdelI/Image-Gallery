@@ -1,5 +1,4 @@
 'use client'
-// import  Image  from 'next/image'
 import type { Photo } from '@/models/Images'
 import { useRouter } from 'next/navigation';
 import { downloadImage } from '@/lib/downloadImage';

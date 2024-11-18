@@ -1,6 +1,7 @@
 import Filters from "@/app/components/Filters";
 // import ClientGallery from "@/app/components/infinit scrolling test/ClientGallery";
 import InitialGalleryLoad from "@/app/components/infinit scrolling test/InitialGalleryLoad";
+import { Suspense } from "react";
 // import Gallery from "@/app/components/Gallery"
 // import { Suspense } from "react";
 // import Loading from "./loading";
@@ -44,7 +45,9 @@ export default async function searchResults( {params}: Props ) {
     return(
         <>
             <Filters />
-            <InitialGalleryLoad topic={ topic }/>
+            <Suspense fallback={<span className="loader mx-auto"></span>}>
+                <InitialGalleryLoad topic={ topic }/>
+            </Suspense>
             {/* <ClientGallery topic={ topic } /> */}
             {/* <Suspense fallback={<Loading />}>
              <Gallery topic={ topic } page={ page }/>

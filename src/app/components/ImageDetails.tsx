@@ -1,9 +1,7 @@
 import type { Photo } from "@/models/Images"
-// import Image from 'next/image';
 import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
-// import ClientGallery from "./infinit scrolling test/ClientGallery";
 import InitialGalleryLoad from "./infinit scrolling test/InitialGalleryLoad";
 
 interface ImageDetailProps {
@@ -11,13 +9,14 @@ interface ImageDetailProps {
 }
 export default function ImageDetail({ photo } : ImageDetailProps) {
   const searchTopic = photo.alt.split(' ');
-  console.log('alt is: ', photo.alt);
+  const topic = photo.alt? `${searchTopic.slice(0,6).join(' ')}` : 'curated';
+  
   return (
     <>
     <div id="container"
-    className="lg:max-w-6xl lg:h-[70vh] lg:mt-[10vh] flex flex-col items-center justify-center lg:flex-row lg:mx-auto rounded-xl shadow-lg "
+    className="lg:max-w-6xl  lg:h-[70vh] lg:mt-[10vh] flex flex-col items-center justify-center md:flex-row lg:mx-auto rounded-xl shadow-lg "
     >
-      <section className="w-2/3 lg:w-1/2 h-full">
+      <section className="m-2 md:w-1/2 h-full">
       <img
         src={photo.src.large}
         alt={photo.alt}
@@ -28,17 +27,18 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
       </section>
 
       <section className="lg:w-1/2 p-4 h-full relative">
+    <div className="flex justify-between items-center">
+        <h1 className="md:text-2xl font-semibold flex-auto">
+          {photo.alt}
+        </h1>
 
-        <div className="flex gap-2 justify-end">
+        <div className="flex gap-2 justify-end flex-auto">
           <ShareModal/>
-          {/* <ShareModal image={photo}/> */}
           <Download image={photo}/>
         </div>
 
-        <h1 className="text-2xl font-semibold my-6">
-          {photo.alt}
-        </h1>
-        <h2 className="text-gray-700 my-6">
+    </div>
+        <h2 className="text-sm md:text-base text-gray-700 my-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Ea aliquam dolores, et ad deleniti tenetur atque amet consectetur adipisicing elit.
           enim error commodi cupiditate.
@@ -50,8 +50,7 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
     </div>
 
       <h2 className="text-2xl font-semibold text-center my-10">More to explore</h2>  
-      <InitialGalleryLoad topic={`${searchTopic.slice(0,6).join(' ')}`} />
-    {/* <ClientGallery topic={`${searchTopic.slice(0,6).join(' ')}`}/> */}
+      <InitialGalleryLoad topic={topic} />
     </>
   );
 };

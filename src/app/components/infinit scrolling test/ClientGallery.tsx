@@ -3,6 +3,8 @@ import fetchImages from "@/lib/fetchImages"
 import { ImagesResults, Photo } from "@/models/Images"
 import { useState, useEffect, useRef } from "react"
 import ImageCard from "../ImageCard"
+import Masonry from 'react-masonry-css'
+
 
 type Props = {
     topic?: string | undefined,
@@ -61,12 +63,17 @@ export default function ClientGallery({topic = 'curated', initialImages}:Props) 
 
   return (
     <div className="flex flex-col">
-      {/* <section className="px-2 mx-auto max-w-7xl flex flex-wrap gap-x-2 mb-10"> */}
-      <section className="px-2 mx-auto max-w-7xl columns-2 md:columns-3 gap-2 mb-10">
-                {images.map(photo => (
+
+      <div className="px-2 mx-auto max-w-7xl">
+      <Masonry
+        breakpointCols={{default: 3, 450: 2}}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column">
+        {images.map(photo => (
                     <ImageCard key={photo.id} photo={photo}/>
                 ))}
-      </section>
+      </Masonry>
+      </div>
       
       {loading && <span className="mt-5 loader mx-auto"></span>}
     </div>

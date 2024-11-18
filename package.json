@@ -14,7 +14,7 @@
     "plaiceholder": "^3.0.0",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "react-loading-components": "^1.1.12",
+    "react-masonry-css": "^1.0.16",
     "zod": "^3.23.8"
   },
   "devDependencies": {
