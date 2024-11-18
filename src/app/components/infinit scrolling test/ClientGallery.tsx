@@ -3,16 +3,15 @@ import fetchImages from "@/lib/fetchImages"
 import { ImagesResults, Photo } from "@/models/Images"
 import { useState, useEffect, useRef } from "react"
 import ImageCard from "../ImageCard"
-// import addBlurredDataUrls from "@/lib/getBase64"
 
 type Props = {
     topic?: string | undefined,
-    page?: string | undefined
+    initialImages: Photo[]
   }
 
-export default function ClientGallery({topic = 'curated'}:Props) {
-    const [images, setImages] = useState<Photo[]>([])
-    const [page, setPage] = useState(1)
+export default function ClientGallery({topic = 'curated', initialImages}:Props) {
+    const [images, setImages] = useState<Photo[]>(initialImages)
+    const [page, setPage] = useState(2)
     const [loading, setLoading] = useState(true)
     const requestInProgress = useRef(false) // to fetch data only once at a time 
     let url
@@ -35,8 +34,6 @@ export default function ClientGallery({topic = 'curated'}:Props) {
             requestInProgress.current = true // if it's false and we get here, lock fetching by setting requestInProgress to true
             const data: ImagesResults | undefined = await fetchImages(url);
             if(!data || data.per_page === 0) return;
-            // const imagesWithBlur = await addBlurredDataUrls(data);
-            // console.log('imagesWithBlur: ', imagesWithBlur);
             setImages(prev => [...prev, ...data.photos]);
             setLoading(false);
             requestInProgress.current = false // unlock fetching and make it ready for more request
@@ -52,7 +49,9 @@ export default function ClientGallery({topic = 'curated'}:Props) {
   
       if (scrollHeight - scrollTop <= clientHeight + 50) { // 50px threshold
           setLoading(true);
-          setPage((prev) => prev + 1);
+          if(!requestInProgress.current){
+            setPage((prev) => prev + 1);
+          }
       }
     };
     useEffect(() => {
@@ -62,7 +61,7 @@ export default function ClientGallery({topic = 'curated'}:Props) {
 
   return (
     <div className="flex flex-col">
-      <section className="px-2 mx-auto max-w-7xl columns-2 md:columns-3 gap-2">
+      <section className="px-2 mx-auto max-w-7xl columns-2 md:columns-3 gap-2 mb-10">
                 {images.map(photo => (
                     <ImageCard key={photo.id} photo={photo}/>
                 ))}

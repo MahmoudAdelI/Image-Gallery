@@ -1,5 +1,6 @@
 import Filters from "@/app/components/Filters";
-import ClientGallery from "@/app/components/infinit scrolling test/ClientGallery";
+// import ClientGallery from "@/app/components/infinit scrolling test/ClientGallery";
+import InitialGalleryLoad from "@/app/components/infinit scrolling test/InitialGalleryLoad";
 // import Gallery from "@/app/components/Gallery"
 // import { Suspense } from "react";
 // import Loading from "./loading";
@@ -43,7 +44,8 @@ export default async function searchResults( {params}: Props ) {
     return(
         <>
             <Filters />
-            <ClientGallery topic={ topic } />
+            <InitialGalleryLoad topic={ topic }/>
+            {/* <ClientGallery topic={ topic } /> */}
             {/* <Suspense fallback={<Loading />}>
              <Gallery topic={ topic } page={ page }/>
             </Suspense> */}

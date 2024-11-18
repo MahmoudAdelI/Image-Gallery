@@ -4,13 +4,15 @@
 // import { Suspense } from "react"
 import Filters from "./components/Filters"
 import Hero from "./components/Hero"
-import ClientGallery from "./components/infinit scrolling test/ClientGallery"
+// import ClientGallery from "./components/infinit scrolling test/ClientGallery"
+import InitialGalleryLoad from "./components/infinit scrolling test/InitialGalleryLoad"
 export default function Home() {
   return(
     <>
       <Hero />
       <Filters />
-      <ClientGallery />
+      <InitialGalleryLoad />
+      {/* <ClientGallery /> */}
     {/* <Suspense fallback={<Loading />}>
       <Gallery />
     </Suspense> */}
