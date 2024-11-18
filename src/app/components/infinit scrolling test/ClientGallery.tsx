@@ -13,7 +13,7 @@ type Props = {
 export default function ClientGallery({topic = 'curated'}:Props) {
     const [images, setImages] = useState<Photo[]>([])
     const [page, setPage] = useState(1)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const requestInProgress = useRef(false) // to fetch data only once at a time 
     let url
 
@@ -48,14 +48,12 @@ export default function ClientGallery({topic = 'curated'}:Props) {
     
 
     const handleScroll = async () => {
-        if (
-            window.innerHeight + document.documentElement.scrollTop + 1 >=
-            document.documentElement.scrollHeight
-        ) {
-            setLoading(true);
-            setPage((prev) => prev + 1);
-            
-        }
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  
+      if (scrollHeight - scrollTop <= clientHeight + 50) { // 50px threshold
+          setLoading(true);
+          setPage((prev) => prev + 1);
+      }
     };
     useEffect(() => {
       window.addEventListener("scroll", handleScroll);
@@ -70,7 +68,7 @@ export default function ClientGallery({topic = 'curated'}:Props) {
                 ))}
       </section>
       
-      {loading && <span className="mt-6 loader mx-auto"></span>}
+      {loading && <span className="mt-5 loader mx-auto"></span>}
     </div>
   )
 }

@@ -5,7 +5,7 @@ import Photographer from "@/app/components/Photographer";
 import ShareModal from "@/app/components/ShareModal";
 import env from "@/lib/env";
 import type { Photo } from "@/models/Images";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default async function Intersepter({params}:{params: Promise<{id: string}>}) {
   const {id} = await params;
@@ -34,11 +34,12 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
             
         </header>
 
-        <Image
+        <img
         src={image.src.large}
         alt={image.alt}
         width={image.width}
         height={image.height}
+        loading='lazy'
         className={`h-full px-2 md:h-[82vh] object-contain`}
         />
       </div>
