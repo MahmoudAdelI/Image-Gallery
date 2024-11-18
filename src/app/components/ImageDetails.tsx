@@ -1,5 +1,5 @@
 import type { Photo } from "@/models/Images"
-import Image from 'next/image';
+// import Image from 'next/image';
 import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
