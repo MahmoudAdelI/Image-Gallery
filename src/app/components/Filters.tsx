@@ -1,15 +1,12 @@
 'use client'
-// import { useState } from "react";
 import { usePathname, useRouter } from 'next/navigation'
 
-const categories:string[]  = ['nature', 'summer', 'design', 'fashion', 'city'];
+const categories:string[]  = ['landscape', 'travel', 'B&W', 'outfits', 'vintage'];
 export default function Filters() {
-//const [clicked, setClicked] = useState<string | null>(null);
   const router = useRouter();
   const pathname = usePathname();
   const handleClick = (category:string) => {
     router.push(`/results/${category}`)
-    //setClicked(category)
   }
   return(
     <>

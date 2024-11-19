@@ -5,7 +5,6 @@ import Photographer from "@/app/components/Photographer";
 import ShareModal from "@/app/components/ShareModal";
 import env from "@/lib/env";
 import type { Photo } from "@/models/Images";
-// import Image from "next/image";
 
 export default async function Intersepter({params}:{params: Promise<{id: string}>}) {
   const {id} = await params;
@@ -28,7 +27,6 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
 
           <section id="buttons" className="flex gap-2 items-center md:gap-6">
             <ShareModal/>
-            {/* <ShareModal image={image} /> */}
             <Download image={image} />
           </section>
             

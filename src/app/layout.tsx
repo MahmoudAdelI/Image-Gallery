@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-// export const revalidate = 3600;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Pixy",
