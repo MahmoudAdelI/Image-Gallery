@@ -1,10 +1,10 @@
 'use client'
 import fetchImages from "@/lib/fetchImages"
 import { ImagesResults, Photo } from "@/models/Images"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 import ImageCard from "../ImageCard"
 import Masonry from 'react-masonry-css'
-
+import debounce from 'lodash/debounce';
 
 type Props = {
     topic?: string | undefined,
@@ -46,7 +46,8 @@ export default function ClientGallery({topic = 'curated', initialImages}:Props) 
     
     
 
-    const handleScroll = async () => {
+    const handleScroll = useCallback(
+      async () => {
       const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
   
       if (scrollHeight - scrollTop <= clientHeight + 50) { // 50px threshold
@@ -54,12 +55,24 @@ export default function ClientGallery({topic = 'curated', initialImages}:Props) 
           if(!requestInProgress.current){
             setPage((prev) => prev + 1);
           }
+        }
       }
-    };
+    ,[]) 
+
+    const debouncedHandleScroll = useMemo(
+      () => debounce(handleScroll, 200),
+      [handleScroll]
+    );
+
     useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      window.addEventListener("scroll", debouncedHandleScroll);
+      window.addEventListener("resize", debouncedHandleScroll);
+      return () => {
+        debouncedHandleScroll.cancel();
+        window.removeEventListener("scroll", debouncedHandleScroll);
+        window.removeEventListener("resize", debouncedHandleScroll);
+      }
+  }, [debouncedHandleScroll]);
 
   return (
     <div className="flex flex-col">
