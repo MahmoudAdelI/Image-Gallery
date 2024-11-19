@@ -2,7 +2,7 @@ import type { Photo } from "@/models/Images"
 import Photographer from "./Photographer";
 import Download from "./Download";
 import ShareModal from "./ShareModal";
-import InitialGalleryLoad from "./infinit scrolling test/InitialGalleryLoad";
+import InitialGalleryLoad from "./infinit-scrolling-test/InitialGalleryLoad";
 
 interface ImageDetailProps {
   photo: Photo;

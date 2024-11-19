@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 .btn {
-  @apply active:bg-black/80 border border-gray-500 rounded-md transition duration-300 select-none;
+  @apply active:bg-black/80 border rounded-md capitalize shadow-md transition duration-300 select-none;
 }
 .dark-btn {
-  @apply bg-black rounded-lg text-white shadow-lg;
+  @apply bg-black rounded-md text-white shadow-md;
 }
 .hover-dark-btn {
-  @apply hover:bg-black hover:text-white hover:rounded-lg hover:shadow-md;
+  @apply hover:bg-black hover:text-white hover:rounded-md hover:shadow-md;
 }
 
 .categories {
-  @apply btn hover-dark-btn my-5 w-12 sm:w-16 md:w-24 text-[10px] md:text-base uppercase py-[6px] md:py-2;
+  @apply btn hover-dark-btn my-5 w-14 sm:w-16 md:w-24 text-[10px] md:text-base py-[6px] md:py-2;
 }
 
 .icon {

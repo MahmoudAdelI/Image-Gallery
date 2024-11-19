@@ -1,5 +1,5 @@
 import Filters from "@/app/components/Filters";
-import InitialGalleryLoad from "@/app/components/infinit scrolling test/InitialGalleryLoad";
+import InitialGalleryLoad from "@/app/components/infinit-scrolling-test/InitialGalleryLoad";
 import { Suspense } from "react";
 
 const categories:string[]  = ['landscape', 'travel', 'B&W', 'outfits', 'vintage'];
@@ -11,11 +11,11 @@ export async function generateStaticParams() {
 
 
 type Props = {
-    params: Promise<{ myParams: string[] }>
+    params: Promise<{ myParams: string }>
 }
 export async function generateMetadata( {params}:Props ) {
     const { myParams } = await params;
-    const topic = myParams?.[0] ?? 'curated';
+    const topic = myParams ?? 'curated';
     return {
         title: `Results for ${ topic }`
     }
@@ -23,7 +23,7 @@ export async function generateMetadata( {params}:Props ) {
 
 export default async function searchResults( {params}: Props ) {
     const { myParams } = await params;
-    const topic = myParams?.[0] ?? 'curated';
+    const topic = myParams ?? 'curated';
     return(
         <>
             <Filters />
