@@ -16,7 +16,7 @@
 }
 
 .icon {
-  @apply transition duration-200 cursor-pointer fill-current p-2 bg-gray-100 rounded-full md:hover:scale-[1.2];
+  @apply transition duration-200 cursor-pointer fill-current p-4 bg-gray-100 rounded-lg md:hover:scale-[1.2];
 }
 
 .next-back {

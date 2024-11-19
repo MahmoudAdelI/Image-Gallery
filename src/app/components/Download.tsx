@@ -1,9 +1,9 @@
 'use client'
 import { Photo } from '@/models/Images';
 import{ useState } from 'react'
-import DropDown from '../assets/DropDown';
 import DownloadIcon from '../assets/DownloadIcon';
 import { downloadImage } from '@/lib/downloadImage';
+import Arrow from '../assets/Arrow';
 
 export default function Download({image}: {image:Photo}) {
     const [DownloadClicked, setDownloadClicked] = useState(false);
@@ -22,7 +22,7 @@ export default function Download({image}: {image:Photo}) {
         className='flex items-center px-3 bg-black active:bg-black/80 text-white rounded-r-lg'
         onClick={toggleDownload}
         >
-            <div className={`inline-block transition-all duration-300 ${DownloadClicked?'rotate-180':''}`}><DropDown /></div>
+            <div className={`inline-block transition-all duration-300 ${DownloadClicked?'rotate-180':''}`}><Arrow /></div>
         </button>
 
         {DownloadClicked && (

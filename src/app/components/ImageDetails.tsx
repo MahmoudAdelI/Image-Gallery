@@ -17,27 +17,27 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
     className="lg:max-w-6xl  lg:h-[70vh] lg:mt-[10vh] flex flex-col items-center justify-center md:flex-row lg:mx-auto rounded-xl shadow-lg "
     >
       <section className="m-2 md:w-1/2 h-full">
-      <img
-        src={photo.src.large}
-        alt={photo.alt}
-        width={photo.width}
-        height={photo.height}
-        className={`h-full object-contain`}
-      />
+        <img
+          src={photo.src.large}
+          alt={photo.alt}
+          width={photo.width}
+          height={photo.height}
+          className={`h-full object-contain`}
+        />
       </section>
 
       <section className="lg:w-1/2 p-4 h-full relative">
-    <div className="flex justify-between items-center">
-        <h1 className="md:text-2xl font-semibold flex-auto">
-          {photo.alt}
-        </h1>
+        <div className="flex justify-between items-start">
+          <h1 className="md:text-2xl font-semibold flex-auto">
+            {photo.alt}
+          </h1>
 
-        <div className="flex gap-2 justify-end flex-auto">
-          <ShareModal/>
-          <Download image={photo}/>
+          <div className="flex gap-2 justify-end flex-auto">
+            <ShareModal/>
+            <Download image={photo}/>
+          </div>
+
         </div>
-
-    </div>
         <h2 className="text-sm md:text-base text-gray-700 my-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Ea aliquam dolores, et ad deleniti tenetur atque amet consectetur adipisicing elit.

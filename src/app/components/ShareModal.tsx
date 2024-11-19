@@ -2,13 +2,8 @@
 import { useState } from "react"
 import Share from "../assets/Share"
 import ShareIcons from "./ShareIcons";
-// import type { Photo } from "@/models/Images";
 import Close from "../assets/Close";
 
-// type ImageDetailProps = {
-//     image: Photo;
-// }
-// ShareModal({image}: ImageDetailProps)
 export default function ShareModal() {
     const [clicked, setClicked] = useState(false);
     const handleClick = () => {
@@ -20,18 +15,25 @@ export default function ShareModal() {
         onClick={handleClick}
         className="p-2 md:py-3 box-border md:px-4 border text-gray-600 hover:text-gray-800 text-xs md:text-base cursor-pointer border-current rounded-lg flex justify-center items-center gap-1"
         >
-            <span><Share /></span>
+            <span><Share width={14} height={14}/></span>
             <span className="hidden md:inline-block">Share</span>
 
         </div>
         {clicked && (
-            <div className="fixed z-50 left-0 right-0 top-0 bottom-0 mx-auto bg-black/80 flex justify-center items-center">
-                
-                <div className="relative w-64 md:w-80 lg:w-96 h-[30vh] bg-white rounded-lg">
-                    <div onClick={handleClick} className="absolute -top-4 -left-8 text-white cursor-pointer transition-transform hover:scale-110 active:scale-95"><Close /></div>
-                    <p className="text-center font-bold text-gray-800 text-xl md:text-3xl m-6 text-wrap">Share with your commuinty</p>
+            <div
+            className="fixed z-50 left-0 right-0 top-0 bottom-0 mx-auto bg-black/80 flex justify-center items-center"
+            >
+                <div className="relative w-full md:w-1/2 h-1/2 mt-auto md:m-0 bg-white rounded-t-xl md:rounded-xl animate-move-up flex flex-col">
+                    <header className="flex justify-between items-center mx-4 py-10  border-b">
+                        <div className="flex gap-2 items-end">
+                            <div className="bg-gray-100 p-[6px] rounded-md">
+                                <Share width={15} height={15} />
+                            </div>
+                            <p className="font-bold text-gray-800 text-lg md:text-xl text-wrap">Share with your commuinty</p>
+                        </div>
+                        <div onClick={handleClick} className=" text-black cursor-pointer transition-transform hover:scale-110 active:scale-95"><Close /></div>
+                    </header>
                     <ShareIcons/>
-                    {/* <ShareIcons image={image} /> */}
                 </div>
 
             </div>

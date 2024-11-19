@@ -1,38 +1,58 @@
 'use client'
-// import type { Photo } from "@/models/Images"
 import { share } from "@/lib/shareImage";
 import FacebookIcon from "@/app/assets/FacebookIcon";
 import TwitterIcon from "@/app/assets/TwitterIcon";
 import WhatsappIcon from "@/app/assets/WhatsappIcon";
-// export interface ImageDetailProps {
-//     image: Photo;
-// }
-// TestIcons({image}:ImageDetailProps)
+import Arrow from "../assets/Arrow";
+
 
 export default function ShareIcons() {
     
     const shareURL = window.location.href;
 
   return (
-    <div id='icons' className={'flex justify-center items-center gap-10 mt-10'}>
+    <div id='icons' className={'flex flex-col gap-6 my-auto mx-4 select-none'}>
+        <div
+        onClick={() => share(shareURL, 'FACEBOOK')}
+        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+            <div className="flex gap-2 items-center">
+                <span className='text-blue-800'>
+                    <FacebookIcon width={32} height={32} />
+                </span>
+                <p className="font-normal text-lg">Share on Facebook</p>
+            </div>
+            <div className="rotate-[270deg]">
+                <Arrow />
+            </div>
+        </div>
 
-        <span onClick={() => share(shareURL, 'FACEBOOK')}
-            className='icon text-blue-800 '
-            >
-            <FacebookIcon />
-        </span>
+        <div
+         onClick={() => share(shareURL, 'TWITTER')}
+         className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+            <div className="flex gap-2 items-center">
+                <span className="text-white bg-black rounded-lg p-1">
+                    <TwitterIcon width={26} height={26} />
+                </span>
+                <p className="font-normal text-lg">Share on X</p>
+            </div>
+            <div className="rotate-[270deg]">
+                <Arrow />
+            </div>
+        </div>
 
-        <span onClick={() => share(shareURL, 'TWITTER')}
-            className='icon'
-            >
-            <TwitterIcon />
-        </span>
-
-        <span onClick={() => share(shareURL, 'WHATSAPP')}
-            className='icon text-green-600'
-            >
-            <WhatsappIcon />
-        </span>
+        <div
+        onClick={() => share(shareURL, 'WHATSAPP')}
+        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+            <div className="flex gap-2 items-center">
+                <span className='text-green-600'>
+                    <WhatsappIcon width={32} height={32} />
+                </span>
+                <p className="font-normal text-lg">Share on Watsapp</p>
+            </div>
+            <div className="rotate-[270deg]">
+                <Arrow />
+            </div>
+        </div>
 
     </div> 
   )
