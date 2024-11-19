@@ -57,7 +57,7 @@ export default function ClientGallery({topic = 'curated', initialImages}:Props) 
           }
         }
       }
-    ,[]) 
+    ,[setLoading, setPage]) 
 
     const debouncedHandleScroll = useMemo(
       () => debounce(handleScroll, 200),
