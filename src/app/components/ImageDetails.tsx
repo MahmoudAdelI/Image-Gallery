@@ -10,7 +10,6 @@ interface ImageDetailProps {
 export default function ImageDetail({ photo } : ImageDetailProps) {
   const searchTopic = photo.alt.split(' ');
   const topic = photo.alt? `${searchTopic.slice(0,6).join(' ')}` : 'curated';
-  
   return (
     <>
     <div id="container"
@@ -43,7 +42,7 @@ export default function ImageDetail({ photo } : ImageDetailProps) {
           Ea aliquam dolores, et ad deleniti tenetur atque amet consectetur adipisicing elit.
           enim error commodi cupiditate.
         </h2>
-        <div className="flex justify-start text-gray-600 hover:text-gray-900">
+        <div className="flex justify-start font-bold text-sm md:text-lg text-gray-600 hover:text-gray-900">
           <Photographer image={photo}/>
         </div>
       </section>

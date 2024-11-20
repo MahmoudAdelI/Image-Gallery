@@ -11,10 +11,10 @@ export default function ShareIcons() {
     const shareURL = window.location.href;
 
   return (
-    <div id='icons' className={'flex flex-col gap-6 my-auto mx-4 select-none'}>
+    <div id='icons' className={'flex flex-col gap-4 my-[10%] mx-4 select-none'}>
         <div
         onClick={() => share(shareURL, 'FACEBOOK')}
-        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-2 cursor-pointer">
             <div className="flex gap-2 items-center">
                 <span className='text-blue-800'>
                     <FacebookIcon width={32} height={32} />
@@ -28,10 +28,10 @@ export default function ShareIcons() {
 
         <div
          onClick={() => share(shareURL, 'TWITTER')}
-         className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+         className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-2 cursor-pointer">
             <div className="flex gap-2 items-center">
                 <span className="text-white bg-black rounded-lg p-1">
-                    <TwitterIcon width={26} height={26} />
+                    <TwitterIcon width={24} height={24} />
                 </span>
                 <p className="font-normal text-lg">Share on X</p>
             </div>
@@ -42,7 +42,7 @@ export default function ShareIcons() {
 
         <div
         onClick={() => share(shareURL, 'WHATSAPP')}
-        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-4 cursor-pointer">
+        className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-2 cursor-pointer">
             <div className="flex gap-2 items-center">
                 <span className='text-green-600'>
                     <WhatsappIcon width={32} height={32} />

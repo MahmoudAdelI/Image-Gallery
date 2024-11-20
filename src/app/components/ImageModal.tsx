@@ -43,7 +43,7 @@ export default function Modal({ children}: { children: React.ReactNode }) {
       
       <div
         ref={wrapper}
-        className="fixed bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 top-7 w-full h-full lg:w-[80vw] animate-move-up md:animate-none"
+        className="fixed bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 top-2 w-full h-full lg:w-[80vw] animate-move-up md:animate-none"
       >
         {children}
       </div>
