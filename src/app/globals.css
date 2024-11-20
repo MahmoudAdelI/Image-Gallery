@@ -15,21 +15,9 @@
   @apply btn hover-dark-btn my-5 w-14 sm:w-16 md:w-24 text-[10px] md:text-base py-[6px] md:py-2;
 }
 
-.icon {
-  @apply transition duration-200 cursor-pointer fill-current p-4 bg-gray-100 rounded-lg md:hover:scale-[1.2];
-}
-
-.next-back {
-  @apply capitalize sm:text-lg underline text-gray-600 hover:text-gray-800;
-}
-
-.pettern {
-  @apply bg-hero-pattern bg-black;
-}
-
 .loader {
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   display: block;
   margin: 15px auto;
@@ -78,8 +66,8 @@
   }
 }
 .my-masonry-grid {
-  display: -webkit-box; /* Not needed if autoprefixing */
-  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: auto;
   gap: 8px;

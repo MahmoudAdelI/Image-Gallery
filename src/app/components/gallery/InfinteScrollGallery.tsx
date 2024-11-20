@@ -2,7 +2,7 @@
 import fetchImages from "@/lib/fetchImages"
 import { ImagesResults, Photo } from "@/models/Images"
 import { useState, useEffect} from "react"
-import ImageCard from "../ImageCard"
+import ImageCard from "./ImageCard"
 import Masonry from 'react-masonry-css'
 import { useInView } from "react-intersection-observer"
 
@@ -11,7 +11,7 @@ type Props = {
     initialImages: Photo[]
   }
 
-export default function ClientGallery({topic = 'curated', initialImages}:Props) {
+export default function InfinteScrollGallery({topic = 'curated', initialImages}:Props) {
     const [images, setImages] = useState<Photo[]>(initialImages)
     const [page, setPage] = useState(2)
     const [loading, setLoading] = useState(false)

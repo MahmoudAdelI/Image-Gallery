@@ -1,14 +1,25 @@
 'use client'
-import { useState } from "react"
-import Share from "../assets/Share"
+import Share from "@/app/assets/icons/Share";
+import { MouseEventHandler, useCallback, useRef, useState } from "react"
 import ShareIcons from "./ShareIcons";
-import Close from "../assets/Close";
+import Close from "@/app/assets/icons/Close";
+
 
 export default function ShareModal() {
     const [clicked, setClicked] = useState(false);
+    const modal = useRef(null);
+
     const handleClick = () => {
         setClicked(!clicked);
     }
+
+    const Dismiss: MouseEventHandler = useCallback(
+        (e) => {
+            if(e.target === modal.current) setClicked(!clicked);
+        }
+    ,[setClicked]
+    ); 
+
   return (
     <>
         <div id="share"
@@ -21,15 +32,17 @@ export default function ShareModal() {
         </div>
         {clicked && (
             <div
+            ref={modal}
+            onClick={Dismiss}
             className="fixed z-50 left-0 right-0 top-0 bottom-0 mx-auto bg-black/80 flex justify-center items-center"
             >
-                <div className="relative w-full md:w-1/2 h-[50%] mt-auto md:m-0 bg-white rounded-t-xl md:rounded-xl animate-move-up flex flex-col">
+                <div className="relative w-full sm:w-[30rem] h-1/2 md:h-96 mt-auto sm:m-0 bg-white rounded-t-xl sm:rounded-xl animate-move-up flex flex-col">
                     <header className="flex justify-between items-center mx-4 py-8  border-b text-gray-800">
                         <div className="flex gap-2 items-end">
-                            <div className="bg-gray-100 text-gray-500 p-[6px] rounded-md">
-                                <Share width={15} height={15} />
+                            <div className="bg-gray-100 text-gray-500 p-1 rounded-md">
+                                <Share width={13} height={13} />
                             </div>
-                            <p className="font-bold  text-lg md:text-xl text-wrap">Share with your commuinty</p>
+                            <p className="font-bold md:text-lg text-wrap">Share with your commuinty</p>
                         </div>
                         <div onClick={handleClick} className="cursor-pointer transition-transform hover:scale-110 active:scale-95"><Close /></div>
                     </header>

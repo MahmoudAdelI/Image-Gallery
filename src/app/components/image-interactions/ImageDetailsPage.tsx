@@ -1,13 +1,14 @@
 import type { Photo } from "@/models/Images"
-import Photographer from "./Photographer";
-import Download from "./Download";
 import ShareModal from "./ShareModal";
-import InitialGalleryLoad from "./infinit-scrolling-test/InitialGalleryLoad";
+import Download from "./Download";
+import Photographer from "./Photographer";
+import InitialGalleryLoad from "../gallery/InitialGalleryLoad";
+
 
 interface ImageDetailProps {
   photo: Photo;
 }
-export default function ImageDetail({ photo } : ImageDetailProps) {
+export default function ImageDetailsPage({ photo } : ImageDetailProps) {
   const searchTopic = photo.alt.split(' ');
   const topic = photo.alt? `${searchTopic.slice(0,6).join(' ')}` : 'curated';
   return (

@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
-import Close from "../assets/Close";
+import Close from "../../assets/icons/Close";
 
 export default function ModalCloser() {
     const router = useRouter();

@@ -3,7 +3,9 @@ import Link from "next/link"
 export default function Photographer({image}:{image: Photo}) {
 
   return (
-    <Link href={image.photographer_url} target="_blank"
+    <Link
+    href={image.photographer_url}
+    target="_blank"
     className="flex gap-1 md:gap-2 items-center justify-center">
 
             <div id="avatar" className="inline-flex items-center justify-center w-[1.7em] h-[1.7em] md:w-[2em] md:h-[2em] bg-gray-200 rounded-full text-gray-800">

@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 
 export default function Modal({ children}: { children: React.ReactNode }) {
   const overlay = useRef(null);
-  const wrapper = useRef(null);
   const router = useRouter();
 
   const onDismiss = useCallback(() => {
@@ -14,11 +13,11 @@ export default function Modal({ children}: { children: React.ReactNode }) {
 
   const onClick: MouseEventHandler = useCallback(
     (e) => {
-      if (e.target === overlay.current || e.target === wrapper.current) {
+      if (e.target === overlay.current) {
         if (onDismiss) onDismiss();
       }
     },
-    [onDismiss, overlay, wrapper]
+    [onDismiss, overlay]
   );
 
   const onKeyDown = useCallback(
@@ -37,13 +36,12 @@ export default function Modal({ children}: { children: React.ReactNode }) {
 
     <div
       ref={overlay}
-      className="fixed z-40 left-0 right-0 top-0 bottom-0 mx-auto bg-black/90 "
+      className="fixed z-40 inset-0 mx-auto bg-black/90 "
       onClick={onClick}
     >
       
       <div
-        ref={wrapper}
-        className="fixed bottom-0 left-0 md:left-1/2 md:-translate-x-1/2 top-2 w-full h-full lg:w-[80vw] animate-move-up md:animate-none"
+        className="absolute md:left-1/2 md:-translate-x-1/2 top-2 w-full h-full lg:w-[80vw] bg-white animate-move-up md:animate-none overflow-scroll"
       >
         {children}
       </div>

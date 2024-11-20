@@ -1,10 +1,11 @@
-import Download from "@/app/components/Download";
-import ImageModal from "@/app/components/ImageModal";
-import ModalCloser from "@/app/components/ModalCloser";
-import Photographer from "@/app/components/Photographer";
-import ShareModal from "@/app/components/ShareModal";
+import Download from "@/app/components/image-interactions/Download";
+import ImageModal from "@/app/components/image-interactions/ImageModal";
+import ModalCloser from "@/app/components/client-helper-components/ModalCloser";
+import Photographer from "@/app/components/image-interactions/Photographer";
 import env from "@/lib/env";
 import type { Photo } from "@/models/Images";
+import ShareModal from "@/app/components/image-interactions/ShareModal";
+import InitialGalleryLoad from "@/app/components/gallery/InitialGalleryLoad";
 
 export default async function Intersepter({params}:{params: Promise<{id: string}>}) {
   const {id} = await params;
@@ -15,10 +16,12 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
     }
 });
   const image:Photo = await res.json();
+  const searchTopic = image.alt.split(' ');
+  const topic = image.alt? `${searchTopic.slice(0,6).join(' ')}` : 'curated';
   return (
 
     <ImageModal>
-      <div className="relative py-10 bg-white h-full rounded-t-lg flex flex-col">
+      <div className="relative pt-10  rounded-t-lg flex flex-col">
         <header className="flex justify-between px-2 md:px-4 my-5 w-full h-auto">
         <ModalCloser />
         <div className="font-bold my-auto text-sm md:text-lg text-gray-600 hover:text-gray-900">
@@ -40,7 +43,8 @@ export default async function Intersepter({params}:{params: Promise<{id: string}
           className={`px-2 md:h-[82vh] object-contain`}
           />
       </div>
-          
+      <h2 className="text-2xl font-semibold text-center my-10">More to explore</h2>  
+      <InitialGalleryLoad topic={topic} />
     </ImageModal>
 
   )

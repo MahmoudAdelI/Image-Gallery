@@ -1,5 +1,5 @@
 import { ImagesResults } from "@/models/Images";
-import ClientGallery from "./ClientGallery";
+import InfinteScrollGallery from "./InfinteScrollGallery";
 import fetchImages from "@/lib/fetchImages";
 type Props = {
     topic?: string | undefined,
@@ -21,6 +21,6 @@ export default async function InitialGalleryLoad({topic = 'curated', page='1'}:P
     if(!initialImages) return;
     
   return (
-    <ClientGallery topic={ topic } initialImages={initialImages?.photos}/>
+    <InfinteScrollGallery topic={ topic } initialImages={initialImages?.photos}/>
   )
 }

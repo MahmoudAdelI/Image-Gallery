@@ -1,9 +1,9 @@
 'use client'
 import { Photo } from '@/models/Images';
 import{ useState } from 'react'
-import DownloadIcon from '../assets/DownloadIcon';
+import DownloadIcon from '../../assets/icons/DownloadIcon';
 import { downloadImage } from '@/lib/downloadImage';
-import Arrow from '../assets/Arrow';
+import Arrow from '../../assets/icons/Arrow';
 
 export default function Download({image}: {image:Photo}) {
     const [DownloadClicked, setDownloadClicked] = useState(false);

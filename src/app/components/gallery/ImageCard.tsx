@@ -2,8 +2,8 @@
 import type { Photo } from '@/models/Images'
 import { useRouter } from 'next/navigation';
 import { downloadImage } from '@/lib/downloadImage';
-import Photographer from './Photographer';
-import DownloadIcon from '../assets/DownloadIcon';
+import DownloadIcon from '@/app/assets/icons/DownloadIcon';
+import Photographer from '../image-interactions/Photographer';
 
 
 type props = {

@@ -1,5 +1,5 @@
-import Filters from "@/app/components/Filters";
-import InitialGalleryLoad from "@/app/components/infinit-scrolling-test/InitialGalleryLoad";
+import Filters from "@/app/components/gallery/Filters";
+import InitialGalleryLoad from "@/app/components/gallery/InitialGalleryLoad";
 import { Suspense } from "react";
 
 const categories:string[]  = ['landscape', 'travel', 'B&W', 'outfits', 'vintage'];

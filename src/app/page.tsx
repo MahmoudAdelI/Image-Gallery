@@ -1,7 +1,7 @@
 import { Suspense } from "react"
-import Filters from "./components/Filters"
-import Hero from "./components/Hero"
-import InitialGalleryLoad from "./components/infinit-scrolling-test/InitialGalleryLoad"
+import Filters from "./components/gallery/Filters"
+import Hero from "./components/header/Hero"
+import InitialGalleryLoad from "./components/gallery/InitialGalleryLoad"
 export default function Home() {
   return(
     <>

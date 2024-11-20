@@ -1,9 +1,9 @@
 'use client'
 import { share } from "@/lib/shareImage";
-import FacebookIcon from "@/app/assets/FacebookIcon";
-import TwitterIcon from "@/app/assets/TwitterIcon";
-import WhatsappIcon from "@/app/assets/WhatsappIcon";
-import Arrow from "../assets/Arrow";
+import FacebookIcon from "@/app/assets/icons/FacebookIcon";
+import TwitterIcon from "@/app/assets/icons/TwitterIcon";
+import WhatsappIcon from "@/app/assets/icons/WhatsappIcon";
+import Arrow from "@/app/assets/icons/Arrow";
 
 
 export default function ShareIcons() {
@@ -11,7 +11,7 @@ export default function ShareIcons() {
     const shareURL = window.location.href;
 
   return (
-    <div id='icons' className={'flex flex-col gap-4 my-[10%] mx-4 select-none'}>
+    <div id='icons' className={'flex flex-col gap-4 my-[10%] mx-4 select-none text-gray-800'}>
         <div
         onClick={() => share(shareURL, 'FACEBOOK')}
         className="active:bg-gray-100 border active:border-gray-400 border-gray-200 rounded-lg w-full flex items-center justify-between p-2 cursor-pointer">
